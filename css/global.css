@@ -57,6 +57,7 @@ header {
       top: 0;
       left: 0; }
       header nav li.drop_down ul {
+        display: none;
         position: absolute;
         top: 100%;
         right: -1px;

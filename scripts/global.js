@@ -11,7 +11,11 @@ function swapImage(img_to_swap, name_change) {
 	
 }
 
+function dropDown() {
 
+	
+	
+}
 
 
 
@@ -19,9 +23,14 @@ $( document ).ready(function() {
 
 	var widow_width = window.innerWidth
 		|| document.documentElement.clientWidth
-		|| document.body.clientWidth;	
-	var $main_logo_img = $("#main_logo");
+		|| document.body.clientWidth
+		,$main_logo_img = $("#main_logo")
+		,$header_drop_down_a = $("header .drop_down a");
 
+	$header_drop_down_a.bind( "click", function() {
+		dropDown();
+	});
+	
 	if (widow_width > 1025) {
 		swapImage($main_logo_img, "_desktop");
 	}
