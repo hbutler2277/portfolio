@@ -24,17 +24,14 @@ li.clear {
 body {
 	font-size: 100%;
 	background-color: #000;
-
 	}
-
 	
-	#container {
-		background-color: #eee;
-		}	
+#container {
+	background-color: #eee;
+	}	
 		
 	header {
-
-
+		margin-bottom: 10%;
 		background-color: #5c5c5c;
 		
 		#main_logo {
@@ -54,7 +51,7 @@ body {
 				float: left;
 				width: 33.33%;
 				text-align: center;
-				vertical-align: center;
+
 				a {
 					display: block;
 					padding: 5% 0;
@@ -62,11 +59,51 @@ body {
 					vertical-align: center;
 					text-decoration: none;
 					border-left: 1px solid #5c5c5c;
+					border-bottom: 1px solid #5c5c5c;
 					background-color: #ccc;
 					}
-				}
-			
 			}
+			li.even,
+			li.even + li	{
+				width: 50%;
+				
+				a {
+					padding: 3.5% 0;		
+					}
+			}
+
+			li.drop_down {
+				position: relative;
+				top: 0;
+				left: 0;
+				
+				ul {
+					position: absolute;
+					top: 100%;
+					right: -1px;
+					width: 80%;
+
+		
+					li {
+						float: none;
+						width: 100%;
+						
+						a {
+							border-right: 1px solid #5c5c5c;
+						}
+					}
+
+				}	
+			}	
+			
+			
+							
+			
+			} /* close nav */
+			
+			
+			
+			
 		
 	}  /* close header */
 
@@ -87,7 +124,7 @@ body {
 			}
 		}
 
-} /* (min-width: 28.75em) */		
+} /* (min-width: 28.75em)  */		
 	
 
 
