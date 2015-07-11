@@ -1,22 +1,20 @@
 (function(){
 
-// Adds an name change to the end of the existing image name
+// Adds a name change to the end of the existing image name
+//removes "mobile if in original image"
 function swapImage(img_to_swap, name_change) {
 
 	var img_path = img_to_swap.attr("src"),
 		file_format = img_path.substring(img_path.lastIndexOf('.'));	
-	
+
+	if (img_path.indexOf("_mobile") !== -1) {
+		 img_path = img_path.replace("_mobile", "");	
+	}
+		
 	img_path = img_path.replace(file_format, name_change + file_format);	
 	img_to_swap.attr("src" , img_path);	
 	
 }
-
-function dropDown() {
-
-	
-	
-}
-
 
 
 $( document ).ready(function() {
@@ -25,16 +23,19 @@ $( document ).ready(function() {
 		|| document.documentElement.clientWidth
 		|| document.body.clientWidth
 		,$main_logo_img = $("#main_logo")
+		,$section_img = $("section img")
 		,$header_drop_down_a = $("header .drop_down a");
 
-	$header_drop_down_a.bind( "click", function() {
-		dropDown();
-	});
-	
 	if (widow_width > 1025) {
 		swapImage($main_logo_img, "_desktop");
+		swapImage($section_img, "_desktop");
 	}
 	
+
+	$header_drop_down_a.bind( "click", function(e) {
+		$(this).next().toggleClass("hide");
+		e.preventDefault();
+	});
 	
 	
 	
@@ -46,7 +47,6 @@ $( document ).ready(function() {
 
 
 
-//console.log("yay");
 
 
 
