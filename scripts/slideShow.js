@@ -1,4 +1,4 @@
-jQuery.fn.slideShow_New = function(slideShow_settings) {
+jQuery.fn.slideShow = function(slideShow_settings) {
 
 	defaultSettings = {
 		start_on_item: 1,

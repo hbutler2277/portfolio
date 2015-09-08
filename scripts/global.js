@@ -57,6 +57,19 @@ $( document ).ready(function() {
 
 	navDropDowns("header .drop_down");	
 	desktopImages();
+
+
+	var featured_slideshow_settings = {
+		start_on_item_random: 1,
+		slide_time: 10000,
+		is_random: false,
+		slide_type: "left",
+		slide_speed: 1000,
+		controls: true		
+		};
+		
+	$("#featured_slideshow").slideShow(featured_slideshow_settings);
+
 	
 	
 });

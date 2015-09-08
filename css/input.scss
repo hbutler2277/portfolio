@@ -29,7 +29,9 @@ body {
 #container {
 	background-color: #eee;
 	}	
-		
+
+
+	
 	header {
 		margin-bottom: 3%;
 		background-color: #5c5c5c;
@@ -112,6 +114,28 @@ body {
 		
 	}  /* close header */
 
+	
+section#hero_spot {
+	
+	.slideshow li {
+		display: none;
+		width: 75%;
+		height: 100px;
+		margin: 0 10%;
+		list-style-type: none;
+	}
+
+	.slideshow li.current {
+		display: block;	
+	}
+	
+	.previous_button {
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+
+}
 	
 section {
 	margin: 0 5%;	 
@@ -213,6 +237,15 @@ footer {
 			
 	}  /* close header */
 
+	section#hero_spot {
+		.slideshow li {
+			width: 150px;
+			height: 200px;
+
+		}
+	}
+	
+	
 		
 }	/* (min-width: 40.5em) */			
 
