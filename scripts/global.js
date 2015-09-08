@@ -1,7 +1,40 @@
 (function(){
 
+
+
+
+function navDropDowns(nav_element) {
+
+	$(nav_element).hover(
+	  function() {
+		$(this).find("ul").addClass("show").removeClass("hide");
+	  }, function() {
+		$(this).find("ul").addClass("hide").removeClass("show");
+	  }
+	);
+		
+}
+
+
+function desktopImages() {
+	
+	var widow_width = window.innerWidth
+		|| document.documentElement.clientWidth
+		|| document.body.clientWidth
+		,$main_logo_img = $("#main_logo")
+		,$section_img = $("section img");
+
+	if (widow_width > 1025) {
+		swapImage($main_logo_img, "_desktop");
+		swapImage($section_img, "_desktop");
+	}		
+	
+}
+
+
+
 // Adds a name change to the end of the existing image name
-//removes "mobile if in original image"
+//removes "mobile" if in original image
 function swapImage(img_to_swap, name_change) {
 
 	var img_path = img_to_swap.attr("src"),
@@ -17,26 +50,13 @@ function swapImage(img_to_swap, name_change) {
 }
 
 
+
+
+
 $( document ).ready(function() {
 
-	var widow_width = window.innerWidth
-		|| document.documentElement.clientWidth
-		|| document.body.clientWidth
-		,$main_logo_img = $("#main_logo")
-		,$section_img = $("section img")
-		,$header_drop_down_a = $("header .drop_down a");
-
-	if (widow_width > 1025) {
-		swapImage($main_logo_img, "_desktop");
-		swapImage($section_img, "_desktop");
-	}
-	
-
-	$header_drop_down_a.bind( "click", function(e) {
-		$(this).next().toggleClass("hide");
-		e.preventDefault();
-	});
-	
+	navDropDowns("header .drop_down");	
+	desktopImages();
 	
 	
 });
