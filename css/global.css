@@ -69,16 +69,21 @@ header {
             border-right: 1px solid #5c5c5c; }
 
 /* close header */
+section#hero_spot .slideshow {
+  width: 75%;
+  height: 200px;
+  margin: 0 10%;
+  border: 2px solid #f00; }
 section#hero_spot .slideshow li {
   display: none;
-  width: 75%;
-  height: 100px;
-  margin: 0 10%;
+  width: 100%;
+  height: 200px;
   list-style-type: none; }
 section#hero_spot .slideshow li.current {
   display: block; }
 section#hero_spot .previous_button {
-  position: absolute;
+  /*		position: absolute;
+  */
   top: 0;
   left: 0; }
 
@@ -125,10 +130,7 @@ section {
     header nav li.even + li a {
       padding: 10px 0; }
 
-  /* close header */
-  section#hero_spot .slideshow li {
-    width: 150px;
-    height: 200px; } }
+  /* close header */ }
 /* (min-width: 40.5em) */
 
 /*# sourceMappingURL=global.css.map */

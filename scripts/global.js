@@ -22,19 +22,28 @@ function desktopImages() {
 		|| document.documentElement.clientWidth
 		|| document.body.clientWidth
 		,$main_logo_img = $("#main_logo")
-		,$section_img = $("section img");
+		,$section_img = $("section.content img")
+		,$featured_slideshow_img = $("#hero_spot img")
+		,featured_slideshow_img_length = $featured_slideshow_img.lemgth;		
 
 	if (widow_width > 1025) {
 		swapImage($main_logo_img, "_desktop");
 		swapImage($section_img, "_desktop");
+	
+	} else {
+		for(i=0; i<featured_slideshow_img_length; i++) {
+			swapImage($featured_slideshow_img[i], "_mobile");	
+			
+		}
+
+		
 	}		
 	
 }
 
 
 
-// Adds a name change to the end of the existing image name
-//removes "mobile" if in original image
+// Swaps mobile or desktop image as directed in desktopImages()
 function swapImage(img_to_swap, name_change) {
 
 	var img_path = img_to_swap.attr("src"),
@@ -43,7 +52,10 @@ function swapImage(img_to_swap, name_change) {
 	if (img_path.indexOf("_mobile") !== -1) {
 		 img_path = img_path.replace("_mobile", "");	
 	}
-		
+	if (img_path.indexOf("_desktop") !== -1) {
+		 img_path = img_path.replace("_desktop", "");	
+	}
+	
 	img_path = img_path.replace(file_format, name_change + file_format);	
 	img_to_swap.attr("src" , img_path);	
 	
